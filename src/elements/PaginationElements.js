@@ -21,10 +21,10 @@ export const PaginationWrapper = styled.div`
       props.isLast ? props.theme.colors.dark3 : props.theme.colors.dark1};
     pointer-events: ${props => (props.isLast ? 'none' : 'auto')};
     cursor: ${props => (props.isLast ? 'default' : 'pointer')};
+  }
 
-    @media ${props => props.theme.breakpoints.tablet} {
-      grid-column: 2 / span 6;
-    }
+  @media ${props => props.theme.breakpoints.tablet} {
+    grid-column: 2 / span 6;
   }
 `
 
