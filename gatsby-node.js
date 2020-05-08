@@ -32,16 +32,16 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 
   // Create single blog posts
-  // data.allMdx.edges.forEach(edge => {
-  //   const { frontmatter, id } = edge.node
-  //   const { slug } = frontmatter
+  data.allMdx.edges.forEach(edge => {
+    const { frontmatter, id } = edge.node
+    const { slug } = frontmatter
 
-  //   actions.createPages({
-  //     path: slug,
-  //     component: require.resolve('./src/templates/singlePost.js'),
-  //     context: {
-  //       id,
-  //     },
-  //   })
-  // })
+    actions.createPage({
+      path: slug,
+      component: require.resolve('./src/templates/singlePost.js'),
+      context: {
+        id,
+      },
+    })
+  })
 }
